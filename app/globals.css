@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #12233A;
+  --color-navy-light: #1B3050;
+  --color-navy-dark: #0C1826;
+  --color-gold: #C4973A;
+  --color-gold-light: #E8C06A;
+  --color-gold-pale: #F5E8C8;
+  --color-cream: #F8F4EE;
+  --color-cream-warm: #EDE6D8;
+  --color-cream-light: #FDFAF6;
+  --color-charcoal: #2C2C2C;
+  --color-muted: #6B6457;
+
+  --font-display: var(--font-cormorant), serif;
+  --font-body: var(--font-jost), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream-light);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #C4973A;
+  color: #12233A;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4973A;
+  border-radius: 3px;
+}
+
+@keyframes autoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: autoScroll 30s linear infinite;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes softBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+.animate-soft-bounce {
+  animation: softBounce 2.4s ease-in-out infinite;
+}
+
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+}
+
+.gold-underline {
+  position: relative;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #C4973A;
+  transition: width 0.35s ease;
+}
+.gold-underline:hover::after {
+  width: 100%;
+}
