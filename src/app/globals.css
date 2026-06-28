@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────
+   Opal Comfort — Design tokens (Tailwind v4 CSS-first @theme)
+   Sage-green + gold "warm British luxury" palette.
+   These generate utilities like bg-sage, text-gold, bg-ivory,
+   border-cream-border, font-display, font-body, etc.
+   ─────────────────────────────────────────────────────────── */
+@theme {
+  --color-ivory: #FAF7F2;
+  --color-warm-white: #F2EDE6;
+  --color-charcoal: #1E1E1E;
+  --color-slate: #4A4A4A;
+
+  --color-sage: #2C4A3E;
+  --color-sage-light: #3D6B5C;
+  --color-sage-dark: #1E3329;
+
+  --color-gold: #B8935A;
+  --color-gold-light: #D4AC75;
+  --color-gold-pale: #F0E4CC;
+
+  --color-cream-border: #E8E0D5;
+
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    background: #FAF7F2; /* ivory — never pure white */
+    color: #1E1E1E;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background: #B8935A;
+    color: #2C4A3E;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF7F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B8935A;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Underline-only form field, shared across the contact form and all the
+     enquiry forms (sample / bespoke). Previously lived in ContactSection. */
+  .form-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #e8e0d5;
+    padding: 0.6rem 0;
+    font-family: var(--font-dm-sans), sans-serif;
+    color: #1e1e1e;
+    outline: none;
+    transition: border-color 0.25s ease;
+  }
+  .form-input:focus {
+    border-bottom-color: #2c4a3e;
+  }
+
+  /* Gentle press feedback for primary CTAs */
+  .btn-press {
+    transition: transform 0.18s ease, background-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-press:active {
+    transform: scale(0.97);
+  }
+
+  /* Soft light "sheen" sweep across a button on hover (elegant, restrained) */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-sheen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-130%) skewX(-20deg);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    transition: transform 0.6s ease;
+    pointer-events: none;
+  }
+  .btn-sheen:hover::after {
+    transform: translateX(130%) skewX(-20deg);
+  }
+}
+
+@layer utilities {
+  /* Subtle film-grain / warm texture for the hero */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  /* Gold underline that slides in from the left on hover (nav links) */
+  .gold-underline {
+    position: relative;
+  }
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: #B8935A;
+    transition: width 0.35s ease;
+  }
+  .gold-underline:hover::after {
+    width: 100%;
+  }
+}
+
+/* Infinite fabric-swatch marquee (pauses on hover) */
+@keyframes autoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: autoScroll 35s linear infinite;
+  will-change: transform;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Slow "ken burns" zoom for the hero image — subtle premium motion */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+.animate-kenburns {
+  animation: kenburns 22s ease-out forwards;
+  will-change: transform;
+}
+
+/* Soft bouncing hero chevron */
+@keyframes softBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.75; }
+  50%      { transform: translateY(8px); opacity: 1; }
+}
+.animate-soft-bounce {
+  animation: softBounce 2.4s ease-in-out infinite;
+}
+
+/* Accessibility: honour the OS "reduce motion" setting — neutralise looping
+   animations (ken-burns, marquee, bounce, pulse) and long transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
