@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 
 const USPS = [
   'Handmade in the UK',
-  '~2-week lead time',
+  '1–2 week lead time',
   'Nationwide delivery & installation',
   'Free old-bed removal',
 ];

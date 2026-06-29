@@ -51,7 +51,7 @@ export default function BespokeForm() {
         <p className="mt-3 font-body text-slate">
           Tap send in WhatsApp to share your idea. We&apos;ll reply the same day,
           send fabrics and design examples, then build your piece in around{' '}
-          two weeks.
+          2+ weeks.
         </p>
       </div>
     );

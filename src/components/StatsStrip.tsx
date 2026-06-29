@@ -6,10 +6,10 @@ const STYLE_COUNT = BED_MODELS.length;
 const COLOUR_COUNT = FABRIC_COLLECTIONS.reduce((n, c) => n + c.colours.length, 0);
 
 const STATS = [
-  { end: STYLE_COUNT, suffix: '', label: 'Bed styles to choose from' },
-  { end: COLOUR_COUNT, suffix: '+', label: 'Fabric colours' },
-  { end: 2, suffix: ' wks', label: 'Typical lead time' },
-  { end: 100, suffix: '%', label: 'Made to order' },
+  { end: STYLE_COUNT, prefix: '', suffix: '', label: 'Bed styles to choose from' },
+  { end: COLOUR_COUNT, prefix: '', suffix: '+', label: 'Fabric colours' },
+  { end: 2, prefix: '1–', suffix: ' wks', label: 'Typical lead time' },
+  { end: 100, prefix: '', suffix: '%', label: 'Made to order' },
 ];
 
 export default function StatsStrip() {
@@ -24,6 +24,7 @@ export default function StatsStrip() {
           >
             <CountUp
               end={s.end}
+              prefix={s.prefix}
               suffix={s.suffix}
               className="font-display text-5xl text-gold sm:text-6xl"
             />

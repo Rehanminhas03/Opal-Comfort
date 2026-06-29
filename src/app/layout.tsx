@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.opalcomfort.co.uk"),
   title: "Opal Comfort | Handmade Bespoke Beds & Sofas — West Yorkshire, UK",
   description:
-    "Opal Comfort handcrafts bespoke beds, ottoman beds, sleigh beds, divans and sofas in West Yorkshire. Your fabric, your colour, your size — delivered and installed across the UK in as little as 2 weeks.",
+    "Opal Comfort handcrafts bespoke beds, ottoman beds, sleigh beds, divans and sofas in West Yorkshire. Your fabric, your colour, your size — delivered and installed across the UK in as little as 1 week.",
   keywords: [
     "bespoke beds UK",
     "handmade beds West Yorkshire",

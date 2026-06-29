@@ -8,7 +8,7 @@ import AnimateIn from './AnimateIn';
 const FAQS = [
   {
     q: 'How quickly can you make my order?',
-    a: "Most bespoke beds and sofas are completed and delivered within 2 weeks of your design being finalised. We'll always confirm your exact lead time when you enquire.",
+    a: "Most listed made-to-order beds are completed and delivered within 1–2 weeks. Fully bespoke or custom-size designs usually take 2+ weeks. We'll always confirm your exact lead time when you enquire.",
   },
   {
     q: 'Do I have to visit a showroom?',

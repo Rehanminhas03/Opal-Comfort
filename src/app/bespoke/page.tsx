@@ -8,7 +8,7 @@ import { BUSINESS } from '@/lib/catalogue';
 export const metadata: Metadata = {
   title: 'Bespoke & Custom | Opal Comfort',
   description:
-    'Tell us your idea for a bed or sofa. We send fabrics and design examples, you share your vision, and we build it by hand in around two weeks.',
+    'Tell us your idea for a bed or sofa. We send fabrics and design examples, you share your vision, and we build it by hand in around 2+ weeks.',
 };
 
 const STEPS = [

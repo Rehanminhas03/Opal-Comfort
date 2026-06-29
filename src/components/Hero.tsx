@@ -82,7 +82,7 @@ export default function Hero() {
         >
           Every piece is handmade to your exact specification in West Yorkshire.
           Your fabric. Your colour. Your size. Delivered and installed across the
-          UK in as little as 2 weeks.
+          UK in as little as 1 week.
         </motion.p>
 
         <motion.div

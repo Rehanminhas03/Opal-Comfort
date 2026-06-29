@@ -20,8 +20,8 @@ const ITEMS = [
   },
   {
     icon: Clock,
-    title: '2-Week Turnaround',
-    desc: 'Most bespoke orders are ready within 2 weeks of your design sign-off.',
+    title: 'Fast Turnaround',
+    desc: 'Listed beds are ready in 1–2 weeks; fully bespoke pieces in 2+ weeks from sign-off.',
   },
 ];
 

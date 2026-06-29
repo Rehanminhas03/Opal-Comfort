@@ -9,8 +9,8 @@ const STATS = [
   },
   {
     icon: Clock,
-    stat: '~2-Week Lead Time',
-    label: 'On most bespoke orders',
+    stat: '1–2 Week Lead Time',
+    label: 'On most made-to-order beds',
   },
   {
     icon: Truck,

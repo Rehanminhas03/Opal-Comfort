@@ -18,7 +18,7 @@ a bespoke (made-to-order) **bed & sofa maker** based in Wakefield, West Yorkshir
 - Tagline: *"Crafted for Rest, Designed for Comfort."*
 - Products: bespoke beds, ottoman beds, sleigh beds, divans, upholstered beds, sofas.
 - Custom: your fabric, your colour, your size.
-- Price range: **£500–£5,000**. Lead time: **~2 weeks**.
+- Price range: **£500–£5,000**. Lead time: **1–2 weeks** for listed/made-to-order beds, **2+ weeks** for fully bespoke/custom.
 - Trading ~3–4 years, **no physical showroom**.
 - Phone / WhatsApp: **07831213807** (international: `447831213807`).
 - Delivered & installed across the UK.

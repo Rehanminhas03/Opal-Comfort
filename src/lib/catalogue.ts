@@ -37,7 +37,8 @@ export const BUSINESS = {
   whatsapp: "447831213807",
   email: null, // CLIENT HAS NOT CREATED ONE YET — placeholder only
   priceRange: { minGBP: 500, maxGBP: 5000 },
-  bespokeLeadTime: "2 weeks",
+  standardLeadTime: "1–2 weeks", // listed / made-to-order beds
+  bespokeLeadTime: "2+ weeks", // fully custom / bespoke designs
   deliversNationwideUK: true,
   installs: true,
   oldItemRemoval: true,
@@ -161,7 +162,7 @@ export const HEADBOARD = {
 
 export type Fulfilment = "made-to-order" | "ready-made";
 export const FULFILMENT_LABELS: Record<Fulfilment, string> = {
-  "made-to-order": "Made to order · ~2 week lead time",
+  "made-to-order": "Made to order · 1–2 week lead time",
   "ready-made": "Ready made · available now",
 };
 

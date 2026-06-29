@@ -25,7 +25,7 @@ const STEPS = [
     num: '04',
     icon: Hammer,
     title: 'We Build It',
-    desc: 'Our craftspeople handmake your piece in West Yorkshire. Usually ready in 2 weeks.',
+    desc: 'Our craftspeople handmake your piece in West Yorkshire. Listed beds in 1–2 weeks; fully bespoke in 2+ weeks.',
   },
   {
     num: '05',
@@ -48,8 +48,8 @@ export default function BespokeProcess() {
             Your Piece, Built in 5 Steps
           </h2>
           <p className="mt-5 font-body text-slate">
-            From first conversation to installation — most bespoke orders are
-            completed and delivered within 2 weeks.
+            From first conversation to installation — listed beds in 1–2 weeks,
+            fully bespoke designs in 2+ weeks.
           </p>
         </AnimateIn>
 

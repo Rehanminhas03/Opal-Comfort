@@ -7,7 +7,7 @@ const ABOUT_IMG =
   'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80';
 
 const FACTS = [
-  { icon: Clock, label: '2-Week Turnaround' },
+  { icon: Clock, label: '1–2 Week Turnaround' },
   { icon: MapPin, label: 'West Yorkshire Made' },
   { icon: Shield, label: 'Installed & Guaranteed' },
 ];

@@ -36,7 +36,8 @@ export default function TermsPage() {
               bespoke items are made specifically for you.</p>
 
             <h2>Lead times, delivery and installation</h2>
-            <p>Bespoke items are typically handmade within around two weeks. We deliver and install
+            <p>Listed made-to-order beds are typically handmade within 1–2 weeks; fully bespoke or
+              custom-size pieces usually take 2+ weeks. We deliver and install
               across the UK and can remove your old items on request. [PLACEHOLDER: delivery charges
               and coverage to be confirmed.]</p>
 
