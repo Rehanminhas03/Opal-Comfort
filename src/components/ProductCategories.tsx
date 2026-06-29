@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import AnimateIn from './AnimateIn';
 import PlaceholderImage from './PlaceholderImage';
+import Tilt3D from './Tilt3D';
 
 type Product = {
   category: string;
@@ -21,7 +22,7 @@ const PRODUCTS: Product[] = [
     category: 'Upholstered Beds',
     tagline: 'The Classic Choice',
     desc: 'Timeless upholstered frames wrapped in your chosen fabric. Available in all sizes from single to emperor.',
-    price: 'Made to order',
+    price: 'From £500',
     badge: 'Most Popular',
     href: '/beds',
     img: '/images/categories/upholstered-beds.jpg',
@@ -30,7 +31,7 @@ const PRODUCTS: Product[] = [
     category: 'Ottoman Beds',
     tagline: 'Style Meets Storage',
     desc: 'Hydraulic lift base reveals generous storage space beneath a beautifully upholstered exterior.',
-    price: 'Made to order',
+    price: 'From £650',
     href: '/beds',
     img: '/images/categories/ottoman-beds.jpg',
   },
@@ -38,7 +39,7 @@ const PRODUCTS: Product[] = [
     category: 'Sleigh Beds',
     tagline: 'A Statement Piece',
     desc: 'Sweeping curved headboard and footboard. Instantly the centrepiece of any bedroom.',
-    price: 'Made to order',
+    price: 'From £700',
     href: '/beds',
     img: '/images/categories/sleigh-beds.jpg',
   },
@@ -46,7 +47,7 @@ const PRODUCTS: Product[] = [
     category: 'Divan Beds',
     tagline: 'Built-In Convenience',
     desc: 'Solid divan base with optional drawer storage. Practical, durable, and beautifully finished.',
-    price: 'Made to order',
+    price: 'From £550',
     href: '/beds',
     img: '/images/categories/divan-beds.jpg',
   },
@@ -62,7 +63,7 @@ const PRODUCTS: Product[] = [
     category: 'Bespoke Sofas',
     tagline: 'Your Dream Sofa',
     desc: "We don't just make beds. Order a sofa built entirely to your spec — fabric, size, style, colour.",
-    price: 'Made to order',
+    price: 'From £800',
     badge: 'NEW',
     href: '/sofas',
     img: '/images/categories/sofas.jpg',
@@ -93,10 +94,11 @@ export default function ProductCategories() {
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((p, i) => (
             <AnimateIn key={p.category} delay={i * 0.08}>
-              <Link
-                href={p.href}
-                className="group block overflow-hidden rounded-md shadow-sm transition-shadow duration-300 hover:shadow-lg"
-              >
+              <Tilt3D max={5}>
+                <Link
+                  href={p.href}
+                  className="group block overflow-hidden rounded-md shadow-sm transition-shadow duration-300 hover:shadow-xl"
+                >
                 {/* Image */}
                 <div className="relative h-72 w-full overflow-hidden">
                   <PlaceholderImage
@@ -128,7 +130,8 @@ export default function ProductCategories() {
                     View Range →
                   </span>
                 </div>
-              </Link>
+                </Link>
+              </Tilt3D>
             </AnimateIn>
           ))}
         </div>

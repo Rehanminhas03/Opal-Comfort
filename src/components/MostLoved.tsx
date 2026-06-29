@@ -3,6 +3,7 @@ import { BED_MODELS, SIZE_CHARTS } from '@/lib/catalogue';
 import { getPlaceholderImage } from '@/lib/placeholderImages';
 import AnimateIn from './AnimateIn';
 import PlaceholderImage from './PlaceholderImage';
+import Tilt3D from './Tilt3D';
 
 // A curated selection of styles for the "Most Loved" row.
 const FEATURED_SLUGS = [
@@ -45,11 +46,11 @@ export default function MostLoved() {
         <AnimateIn delay={0.05} className="mt-10">
           <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 lg:-mx-10 lg:px-10">
             {FEATURED.map((bed) => (
-              <Link
-                key={bed.slug}
-                href={`/beds/${bed.slug}`}
-                className="group w-64 shrink-0 snap-start overflow-hidden rounded-md bg-ivory shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
+              <Tilt3D key={bed.slug} max={6} className="w-64 shrink-0 snap-start">
+                <Link
+                  href={`/beds/${bed.slug}`}
+                  className="group block overflow-hidden rounded-md bg-ivory shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
                 <div className="relative h-56 w-full overflow-hidden">
                   <PlaceholderImage
                     src={getPlaceholderImage('bed', bed.slug)}
@@ -71,7 +72,8 @@ export default function MostLoved() {
                     View &amp; Enquire →
                   </span>
                 </div>
-              </Link>
+                </Link>
+              </Tilt3D>
             ))}
           </div>
         </AnimateIn>

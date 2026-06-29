@@ -35,8 +35,8 @@ export default async function BedDetailPage({
   const bed = BED_MODELS.find((b) => b.slug === slug);
   if (!bed) notFound();
 
-  // Product structured data. No prices published for now — Product without an
-  // offer/price. (Add an AggregateOffer here later if the client wants pricing.)
+  // Product structured data. Made-to-order with a quoted price, so we publish the
+  // business price range as an AggregateOffer rather than a single price.
   const productLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -44,6 +44,13 @@ export default async function BedDetailPage({
     description: bed.description,
     category: 'Beds',
     brand: { '@type': 'Brand', name: 'Opal Comfort' },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'GBP',
+      lowPrice: 500,
+      highPrice: 5000,
+      availability: 'https://schema.org/MadeToOrder',
+    },
   };
 
   return (
